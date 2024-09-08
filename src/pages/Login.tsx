@@ -29,19 +29,24 @@ export default function Login() {
     navigate("/");
   }
   return (
-    <div>
-      <div>
-        <label htmlFor='id'>아이디</label>
-        <input type='text' onChange={(e) => { setId(e.target.value) }} placeholder='아이디' />
+    <div className='max-w-lg mx-auto my-auto p-5 bg-[aliceblue] rounded-lg'>
+      <div className='mb-7'>
+        <label className='block mb-2 text-xl font-bold' htmlFor='id'>아이디</label>
+        <input className='w-full p-2 box-border' type='text' onChange={(e) => { setId(e.target.value) }} placeholder='아이디' />
       </div>
-      <div>
-        <label htmlFor='password'>패스워드</label>
-        <input type='password' onChange={(e) => { setPassword(e.target.value) }} placeholder='비밀번호' />
+      <div className='mb-7'>
+        <label className='block mb-2 text-xl font-bold' htmlFor='password'>패스워드</label>
+        <input className='w-full p-2 box-border' type='password' onChange={(e) => { setPassword(e.target.value) }} placeholder='비밀번호' />
       </div>
-      <button onClick={handleLogin}>로그인</button>
-      <button onClick={() => {
-        navigate("/signup");
-      }}>회원가입</button>
+      <button
+        className='w-full p-2 bg-gradient-to-r from-[#613f89] via-[#7f83ba] to-[#b89bcb] text-white border-none rounded cursor-pointer mb-4 disabled:bg-black'
+        onClick={handleLogin}
+      >로그인</button>
+      <button
+        className='w-full p-2 bg-gray-500 text-white border-none rounded cursor-pointer'
+        onClick={() => {
+          navigate("/signup");
+        }}>회원가입</button>
     </div>
   )
 }
