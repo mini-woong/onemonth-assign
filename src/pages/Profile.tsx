@@ -18,14 +18,14 @@ export default function Profile() {
     const handleUpdateProfile = async () => {
         const formData = new FormData();
         formData.append("nickname", nickname);
-        formData.append("avatar", avatar);
+        formData.append("avatar", avatar as Blob);
         const response = await updateProfile(formData);
 
-        if(response.success) {
+        if(response.success && user) {
             const uerNewInfo: User = {
                 ...user,
-                nickname: response.nickname,
-                avatar: response.avatar
+                nickname: response.nickname as string,
+                avatar: response.avatar as string
             }
             setUser(uerNewInfo);
             navigate("/");
