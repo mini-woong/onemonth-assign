@@ -50,7 +50,7 @@ export default function Layout() {
                 </div>
 
             </nav>
-            <div className="py-24 px-8 bg-black">
+            <div className="py-24 px-8 h-full bg-black">
                 <Outlet />
             </div>
         </>
